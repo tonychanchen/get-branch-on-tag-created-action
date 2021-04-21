@@ -14,4 +14,6 @@ jobs:
         raw=$(git branch -r --contains ${{ github.ref }})
         branch=${raw/origin\/}
         echo "BRANCH=$branch" >> $GITHUB_ENV
+        export GIT_BRANCH_TAG=${{ env.BRANCH }}
+        sh .github/workflows/pushevent.sh
     - run: echo ${{ env.BRANCH }}
