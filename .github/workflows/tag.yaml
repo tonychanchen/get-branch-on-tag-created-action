@@ -15,7 +15,7 @@ jobs:
         branch=${raw/origin\/}
         echo "BRANCH=$branch" >> $GITHUB_ENV
         GIT_BRANCH_TAG=${{ env.BRANCH }}
-        echo whwhwhw---$GIT_BRANCH_TAG
+        echo whwhwhw--- ${{ env.BRANCH }}
         export $GIT_BRANCH_TAG
         sh .github/workflows/pushevent.sh
     - run: echo ${{ env.BRANCH }}
