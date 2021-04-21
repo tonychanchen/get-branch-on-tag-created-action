@@ -12,13 +12,12 @@ jobs:
     - name: Get Branch
       run: |
         raw=$(git branch -r --contains ${{ github.ref }})
-        branch=${raw/origin\/}
+        branch=${raw##*/}
         echo "BRANCH=$branch" >> $GITHUB_ENV
     - name: Get Branch VV
       run: |
-        echo ${{ env.BRANCH }}
         GIT_BRANCH_TAG=${{ env.BRANCH }}
-        echo whwhwhw--- ${{ env.BRANCH }}
+        echo whwhwhw---$GIT_BRANCH_TAG
         export $GIT_BRANCH_TAG
         sh .github/workflows/pushevent.sh
     - run: echo ${{ env.BRANCH }}
