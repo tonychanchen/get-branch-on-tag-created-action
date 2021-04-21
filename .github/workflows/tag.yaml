@@ -16,9 +16,6 @@ jobs:
         echo "BRANCH=$branch" >> $GITHUB_ENV
     - name: Get Branch VV
       run: |
-#        GIT_BRANCH_TAG=${{ env.BRANCH }}
-#        echo whwhwhw---$GIT_BRANCH_TAG
-#        export $GIT_BRANCH_TAG
         sh .github/workflows/pushevent.sh
       env:
         GIT_BRANCH_TAG: ${{ env.BRANCH }}
