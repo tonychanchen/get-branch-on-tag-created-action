@@ -1,0 +1,13 @@
+name: Branch
+on: [push, pull_request]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout source code
+      uses: actions/checkout@v1
+    - name: Get Branch VV
+      run: |
+        sh .github/workflows/pushevent.sh
+    
