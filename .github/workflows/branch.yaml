@@ -1,5 +1,9 @@
 name: Branch
-on: push
+on:
+  push:
+    paths-ignore: # 有時候不想要改個文档也触发 github actions
+      - '**.md'
+      - 'LICENSE'
 
 jobs:
   job1:
